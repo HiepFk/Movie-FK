@@ -22,9 +22,9 @@ function BannerItem({ item, index }) {
         <div className={index === 0 ? " name" : "name name_sml"}>
           {item?.name || item?.title}
         </div>
-        <div className="time">
+        <div className={index === 0 ? "time" : "time time_sml"}>
           <BsClock className="icon" />
-          <span></span>
+          <span>{item?.release_date}</span>
         </div>
         {index === 0 && (
           <>
@@ -78,13 +78,28 @@ const Wrapper = styled.div`
     width: 35rem;
   }
   .name_sml {
-    top: 8rem;
+    top: 9rem;
     font-size: 1.5rem;
     width: 10rem;
   }
-  .about {
+  .time {
     position: absolute;
     top: 21rem;
+    display: flex;
+    align-items: center;
+    width: 10rem;
+  }
+  .time_sml {
+    top: 7.5rem;
+  }
+  .icon {
+    color: yellow;
+    margin-right: 1rem;
+    font-weight: bold;
+  }
+  .about {
+    position: absolute;
+    top: 23rem;
     width: 35rem;
   }
 `;
