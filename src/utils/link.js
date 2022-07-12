@@ -6,17 +6,22 @@ export const menu = [
   },
   {
     id: 2,
-    title: "Movie",
+    title: "Popular Movie",
     url: "/movies",
   },
   {
     id: 3,
-    title: "TV Seri",
+    title: "Popular TV Series",
     url: "/tvs",
   },
   {
     id: 4,
-    title: "Contact",
-    url: "/tvs",
+    title: "Top Movies",
+    url: "/topmovies",
+  },
+  {
+    id: 5,
+    title: "Top TV Seri",
+    url: "/toptvs",
   },
 ];

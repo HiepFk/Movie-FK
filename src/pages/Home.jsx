@@ -8,10 +8,30 @@ function Home() {
     <>
       <Banner />
       <Header />
-      <ListCard type="movie" getTrending={getTrending} />
-      <ListCard type="tv" getTrending={getTrending} />
-      <ListCard type="movie" getTopRated={getTopRated} />
-      <ListCard type="tv" getTopRated={getTopRated} />
+      <ListCard
+        type="movie"
+        getData={getTrending}
+        title={"POPULAR MOVIE"}
+        link="/movies"
+      />
+      <ListCard
+        type="tv"
+        getData={getTrending}
+        title={"POPULAR TV SERIES"}
+        link="/tvs"
+      />
+      <ListCard
+        type="movie"
+        getData={getTopRated}
+        title={"TOP RATED MOVIES"}
+        link="/topmovies"
+      />
+      <ListCard
+        type="tv"
+        getData={getTopRated}
+        title={"TOP RATED TV SERIES"}
+        link="/toptvs"
+      />
     </>
   );
 }

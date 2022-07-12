@@ -18,6 +18,12 @@ function Header() {
     if (pathname === "/tvs") {
       setIndex(3);
     }
+    if (pathname === "/topmovies") {
+      setIndex(4);
+    }
+    if (pathname === "/toptvs") {
+      setIndex(5);
+    }
   }, [pathname]);
 
   return (
@@ -51,11 +57,12 @@ const Wrapper = styled.div`
   background-color: #0c2738;
   .img {
     width: 5rem;
+    transform: translateX(-0.5rem);
   }
   .menu_item {
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-left: 2.5rem;
+    margin-left: 2rem;
     color: white;
     padding-bottom: 0.5rem;
     border-bottom: 2.5px solid transparent;

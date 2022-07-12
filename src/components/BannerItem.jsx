@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 function BannerItem({ item, index }) {
-  const link = "https://image.tmdb.org/t/p/original";
-
+  const link = process.env.REACT_APP_API_IMG;
   return (
     <Wrapper className="container banner_item">
       <div

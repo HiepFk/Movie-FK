@@ -10,10 +10,33 @@ function App() {
     <div className="app">
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="movies" element={<List />} />
-        <Route exact path="movies/:id" element={<Detail />} />
-        <Route exact path="tvs" element={<List />} />
-        <Route exact path="tvs/:id" element={<Detail />} />
+        <Route
+          exact
+          path="movies"
+          element={<List type="movie" choise="popular" title="Movie" />}
+        />
+        <Route exact path="movies/:id" element={<Detail type="movie" />} />
+        <Route
+          exact
+          path="tvs"
+          element={<List type="tv" choise="popular" title="Top Tv Series" />}
+        />
+        <Route exact path="tvs/:id" element={<Detail type="tv" />} />
+        <Route
+          exact
+          path="topmovies"
+          element={
+            <List type="movie" choise="top_rated" title="Top Rated Movie" />
+          }
+        />
+        <Route
+          exact
+          path="toptvs"
+          element={
+            <List type="tv" choise="top_rated" title="Top Rated Tv Series" />
+          }
+        />
+
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
