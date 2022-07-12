@@ -53,6 +53,7 @@ button {
   background: #888888;
 }
 .app {
-  background-color: #0b0c2a;
   position: relative;
+  background-color: #081b27;
+  color: white;
 }
