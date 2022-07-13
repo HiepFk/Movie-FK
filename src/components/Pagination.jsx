@@ -3,6 +3,10 @@ import ReactPaginate from "react-paginate";
 import styled from "styled-components";
 function Pagination({ handePage, page, maxPage }) {
   const handeCheck = (e) => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     handePage(e.selected + 1);
   };
   return (

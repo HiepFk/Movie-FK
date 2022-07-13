@@ -6,12 +6,12 @@ export const menu = [
   },
   {
     id: 2,
-    title: "Popular Movie",
+    title: "Movie",
     url: "/movies",
   },
   {
     id: 3,
-    title: "Popular TV Series",
+    title: "TV Series",
     url: "/tvs",
   },
   {

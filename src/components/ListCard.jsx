@@ -38,7 +38,7 @@ function ListCard({ type, getData, title, link }) {
           {data?.map((item, index) => {
             return (
               <SplideSlide key={index}>
-                <Card data={item} />
+                <Card data={item} type={type} />
               </SplideSlide>
             );
           })}

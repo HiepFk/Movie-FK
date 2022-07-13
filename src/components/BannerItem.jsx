@@ -6,31 +6,41 @@ import styled from "styled-components";
 
 function BannerItem({ item, index }) {
   const link = process.env.REACT_APP_API_IMG;
+  console.log(item);
   return (
     <Wrapper className="container banner_item">
-      <div
-        className="img"
-        style={{
-          background: `url(${link}${item?.backdrop_path}) no-repeat center center /cover`,
-        }}
-      ></div>
-      <div className="info">
-        <div className={index === 0 ? "vote" : "vote vote_sml"}>
-          {item?.vote_average?.toFixed(1)}
+      <Link
+        to={
+          item?.media_type === "movie"
+            ? `/movies/${item?.id}`
+            : `/tvs/${item?.id}`
+        }
+        className="link"
+      >
+        <div
+          className="img"
+          style={{
+            background: `url(${link}${item?.backdrop_path}) no-repeat center center /cover`,
+          }}
+        ></div>
+        <div className="info">
+          <div className={index === 0 ? "vote" : "vote vote_sml"}>
+            {item?.vote_average?.toFixed(1)}
+          </div>
+          <div className={index === 0 ? " name" : "name name_sml"}>
+            {item?.name || item?.title}
+          </div>
+          <div className={index === 0 ? "time" : "time time_sml"}>
+            <BsClock className="icon" />
+            <span>{item?.release_date}</span>
+          </div>
+          {index === 0 && (
+            <>
+              <div className="about">{item?.overview}</div>
+            </>
+          )}
         </div>
-        <div className={index === 0 ? " name" : "name name_sml"}>
-          {item?.name || item?.title}
-        </div>
-        <div className={index === 0 ? "time" : "time time_sml"}>
-          <BsClock className="icon" />
-          <span>{item?.release_date}</span>
-        </div>
-        {index === 0 && (
-          <>
-            <div className="about">{item?.overview}</div>
-          </>
-        )}
-      </div>
+      </Link>
     </Wrapper>
   );
 }
@@ -39,6 +49,9 @@ const Wrapper = styled.div`
   overflow: hidden;
   width: 100%;
   height: 100%;
+  .link {
+    color: white;
+  }
   .img {
     position: absolute;
     top: 0;

@@ -1,30 +1,41 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { BsClock } from "react-icons/bs";
 
-function Card({ data }) {
+function Card({ data, type }) {
   const link = process.env.REACT_APP_API_IMG;
 
   return (
     <Wrapper>
-      <div className="wrapper">
-        <div className="vote">{data?.vote_average?.toFixed(1)}</div>
-        <img src={`${link}${data?.poster_path}`} alt="" className="img" />
-      </div>
-      <div className="time">
-        <BsClock className="icon" />
-        {data?.release_date && <span>Release date: {data?.release_date}</span>}
-        {data?.first_air_date && (
-          <span>First air date: {data?.first_air_date}</span>
-        )}
-      </div>
-      <div className="name">{data?.title || data?.name}</div>
+      <Link
+        to={type === "movie" ? `/movies/${data?.id}` : `/tvs/${data?.id}`}
+        className="link"
+      >
+        <div className="wrapper">
+          <div className="vote">{data?.vote_average?.toFixed(1)}</div>
+          <img src={`${link}${data?.poster_path}`} alt="" className="img" />
+        </div>
+        <div className="time">
+          <BsClock className="icon" />
+          {data?.release_date && (
+            <span>Release date: {data?.release_date}</span>
+          )}
+          {data?.first_air_date && (
+            <span>First air date: {data?.first_air_date}</span>
+          )}
+        </div>
+        <div className="name">{data?.title || data?.name}</div>
+      </Link>
     </Wrapper>
   );
 }
 const Wrapper = styled.div`
   margin-bottom: 2rem;
   width: 100%;
+  .link {
+    color: white !important;
+  }
   .wrapper {
     position: relative;
     width: 100%;

@@ -44,7 +44,7 @@ function List({ type, choise, title }) {
       </div>
       <div className="container">
         {data?.map((item, index) => {
-          return <Card data={item} key={index} />;
+          return <Card data={item} key={index} type={type} />;
         })}
       </div>
       <Pagination handePage={setPage} page={page} />

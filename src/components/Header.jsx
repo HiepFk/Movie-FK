@@ -9,13 +9,14 @@ function Header() {
 
   const pathname = window.location.pathname;
   useEffect(() => {
+    console.log(pathname);
     if (pathname === "/") {
       setIndex(1);
     }
-    if (pathname === "/movies") {
+    if (pathname.includes("/movies")) {
       setIndex(2);
     }
-    if (pathname === "/tvs") {
+    if (pathname.includes("/tvs")) {
       setIndex(3);
     }
     if (pathname === "/topmovies") {
