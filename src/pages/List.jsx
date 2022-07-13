@@ -109,5 +109,17 @@ const Wrapper = styled.div`
     font-size: 1.75rem;
     margin-left: 1rem;
   }
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 1170px) and (min-width: 768px) {
+    .container {
+      padding: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 `;
 export default List;

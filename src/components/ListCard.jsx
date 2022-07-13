@@ -25,7 +25,7 @@ function ListCard({ type, getData, title, link }) {
           <BsArrowRight className="icon" />
         </Link>
       </div>
-      <div className="container movie">
+      <div className="container small">
         <Splide
           options={{
             perPage: 2,
@@ -73,7 +73,7 @@ function ListCard({ type, getData, title, link }) {
 const Wrapper = styled.div`
   padding: 2rem 15rem;
   padding-bottom: 0rem;
-  .movie {
+  .small {
     display: none;
   }
   .title {
@@ -118,6 +118,21 @@ const Wrapper = styled.div`
     cursor: pointer;
     width: calc(100% - 0.5rem);
     /* height: 25rem; */
+  }
+  @media (max-width: 768px) {
+    padding: 1rem;
+    .small {
+      display: block;
+    }
+    .laptop {
+      display: none;
+    }
+  }
+  @media (max-width: 1170px) and (min-width: 768px) {
+    padding: 1rem;
+    .small {
+      display: none;
+    }
   }
 `;
 export default ListCard;
