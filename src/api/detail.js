@@ -16,7 +16,7 @@ export const getCredits = async (setData, type, id, setLoading) => {
   const link = `${localLink}/${type}/${id}/credits?api_key=${api}&language=en-US`;
   try {
     const res = await axios.get(link);
-    setData(res?.data?.cast.slice(0, 10));
+    setData(res?.data?.cast.slice(0, 15));
     setLoading(false);
   } catch (error) {
     throw error;

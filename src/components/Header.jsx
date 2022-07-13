@@ -4,12 +4,15 @@ import styled from "styled-components";
 import logo from "../assets/logo2.jpg";
 import { menu } from "../utils/link";
 
-function Header() {
+function Header({ setPage }) {
   const [index, setIndex] = useState(1);
 
   const pathname = window.location.pathname;
   useEffect(() => {
-    console.log(pathname);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     if (pathname === "/") {
       setIndex(1);
     }
@@ -39,7 +42,10 @@ function Header() {
               to={item.url}
               className={item.id === index ? "menu_item active" : "menu_item"}
               key={item.id}
-              onClick={() => setIndex(item.id)}
+              onClick={() => {
+                setIndex(item.id);
+                setPage(1);
+              }}
             >
               {item.title}
             </Link>

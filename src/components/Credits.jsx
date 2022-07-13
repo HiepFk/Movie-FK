@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-
+import avatar from "../assets/avatar.jpg";
 import Loading from "./Loading";
 import { getCredits } from "../api/detail";
 
@@ -41,7 +41,11 @@ function Credits({ type }) {
               <SplideSlide key={index}>
                 <div className="cast_item" key={index}>
                   <img
-                    src={`${link}${item?.profile_path}`}
+                    src={
+                      item?.profile_path
+                        ? `${link}${item?.profile_path}`
+                        : avatar
+                    }
                     alt=""
                     className="img_cast"
                   />
@@ -83,6 +87,8 @@ const Wrapper = styled.div`
   }
   .img_cast {
     width: 8rem;
+    min-height: 12rem;
+    object-fit: cover;
     border-radius: 5px;
     margin-bottom: 0.5rem;
   }

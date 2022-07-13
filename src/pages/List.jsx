@@ -5,31 +5,40 @@ import styled from "styled-components";
 import Pagination from "../components/Pagination";
 import Loading from "../components/Loading";
 import Card from "../components/Card";
-import { pageList } from "../api/list";
+import { pageList, searchList } from "../api/list";
 
 function List({ type, choise, title }) {
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [maxPage, setMaxPage] = useState();
   const [text, setText] = useState("");
+
+  const handeSearch = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setPage(1);
+    searchList(setData, type, text, page, setLoading, setMaxPage);
+    // setText("");
+  };
+
   useEffect(() => {
     setLoading(true);
-    pageList(setData, type, choise, page, setLoading);
+    pageList(setData, type, choise, page, setLoading, setMaxPage);
   }, [choise, page, type]);
 
   if (loading) {
     return <Loading />;
   }
-
   return (
     <Wrapper>
-      <Header className="header" />
+      <Header className="header" setPage={setPage} />
       <div className="title">
         <div className="left">
           <div className="pillar"></div>
           <div className="desc">{title}</div>
         </div>
-        <form className="right">
+        <form className="right" onSubmit={handeSearch}>
           <input
             type="text"
             name="text"
@@ -43,11 +52,11 @@ function List({ type, choise, title }) {
         </form>
       </div>
       <div className="container">
-        {data?.map((item, index) => {
+        {data?.results?.map((item, index) => {
           return <Card data={item} key={index} type={type} />;
         })}
       </div>
-      <Pagination handePage={setPage} page={page} />
+      <Pagination handePage={setPage} page={page} maxPage={maxPage} />
     </Wrapper>
   );
 }
@@ -63,7 +72,6 @@ const Wrapper = styled.div`
     padding: 0rem 15rem;
     padding-top: 1rem;
     display: flex;
-    align-items: center;
     width: 100%;
     justify-content: space-between;
     margin-bottom: 1rem;

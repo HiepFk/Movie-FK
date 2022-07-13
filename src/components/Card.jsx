@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { BsClock } from "react-icons/bs";
-
+import poster from "../assets/poster.jpg";
 function Card({ data, type }) {
   const link = process.env.REACT_APP_API_IMG;
 
@@ -14,7 +14,11 @@ function Card({ data, type }) {
       >
         <div className="wrapper">
           <div className="vote">{data?.vote_average?.toFixed(1)}</div>
-          <img src={`${link}${data?.poster_path}`} alt="" className="img" />
+          <img
+            src={data?.poster_path ? `${link}${data?.poster_path}` : poster}
+            alt=""
+            className="img"
+          />
         </div>
         <div className="time">
           <BsClock className="icon" />

@@ -25,10 +25,33 @@ function ListCard({ type, getData, title, link }) {
           <BsArrowRight className="icon" />
         </Link>
       </div>
-      <div className="container">
+      <div className="container movie">
+        <Splide
+          options={{
+            perPage: 2,
+            width: "100%",
+            rewind: true,
+            arrows: false,
+            pagination: false,
+            drag: "free",
+            gap: "1.5rem",
+          }}
+        >
+          {data?.map((item, index) => {
+            return (
+              <SplideSlide key={index}>
+                <Card data={item} type={type} />
+              </SplideSlide>
+            );
+          })}
+        </Splide>
+      </div>
+      <div className="container laptop">
         <Splide
           options={{
             perPage: 4,
+            width: "100%",
+            rewind: true,
             arrows: false,
             pagination: false,
             drag: "free",
@@ -48,8 +71,11 @@ function ListCard({ type, getData, title, link }) {
   );
 }
 const Wrapper = styled.div`
-  padding: 1rem 15rem;
+  padding: 2rem 15rem;
   padding-bottom: 0rem;
+  .movie {
+    display: none;
+  }
   .title {
     display: flex;
     align-items: center;

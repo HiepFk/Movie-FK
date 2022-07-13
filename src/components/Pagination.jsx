@@ -14,7 +14,7 @@ function Pagination({ handePage, page, maxPage }) {
       <ReactPaginate
         previousLabel={"<"}
         nextLabel={">"}
-        pageCount={500}
+        pageCount={maxPage}
         pageRangeDisplayed={2}
         marginPagesDisplayed={1}
         onPageChange={handeCheck}

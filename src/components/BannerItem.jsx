@@ -6,7 +6,6 @@ import styled from "styled-components";
 
 function BannerItem({ item, index }) {
   const link = process.env.REACT_APP_API_IMG;
-  console.log(item);
   return (
     <Wrapper className="container banner_item">
       <Link
@@ -113,6 +112,22 @@ const Wrapper = styled.div`
     position: absolute;
     top: 23rem;
     width: 35rem;
+  }
+  @media (max-width: 768px) {
+    .vote {
+      top: 5rem;
+    }
+    .name {
+      top: 9rem;
+      font-size: 1.5rem;
+      width: 15rem;
+    }
+    .time {
+      top: 7.5rem;
+    }
+    .about {
+      display: none;
+    }
   }
 `;
 export default BannerItem;

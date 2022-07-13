@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import BannerItem from "./BannerItem";
 import { banner } from "../api/home";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo3.png";
 function Banner() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
     position: absolute;
     top: 2rem;
     left: 2rem;
-    width: 8rem;
+    width: 22rem;
     z-index: 99;
   }
   .wrapper {
@@ -47,6 +47,24 @@ const Wrapper = styled.div`
     }
     .banner_item:last-child {
       grid-area: bon;
+    }
+  }
+  @media (max-width: 768px) {
+    .wrapper {
+      height: 90rem;
+      grid-template-areas:
+        "mot"
+        "hai"
+        "ba"
+        "bon
+        ";
+    }
+    .img_logo {
+      top: 1rem;
+      left: calc(50% - 11rem);
+    }
+    .wrapper {
+      padding-top: 6.5rem;
     }
   }
 `;
