@@ -96,8 +96,8 @@ const Wrapper = styled.div`
     cursor: pointer;
     display: none;
   }
-  @media (max-width: 768px) {
-    padding: 1.5rem;
+  @media (max-width: 994px) {
+    padding: 1rem;
     .icon {
       display: block;
     }
@@ -124,7 +124,7 @@ const Wrapper = styled.div`
       transform: translateX(0%);
     }
   }
-  @media (max-width: 1170px) and (min-width: 768px) {
+  @media (max-width: 1170px) and (min-width: 994px) {
     padding: 1rem 5rem;
   }
 `;

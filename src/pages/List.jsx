@@ -33,67 +33,52 @@ function List({ type, choise, title }) {
   return (
     <Wrapper>
       <Header className="header" setPage={setPage} />
-      <div className="title">
-        <div className="left">
-          <div className="pillar"></div>
-          <div className="desc">{title}</div>
-        </div>
-        <form className="right" onSubmit={handeSearch}>
-          <input
-            type="text"
-            name="text"
-            id="text"
-            className="input"
-            onChange={(e) => setText(e.target.value)}
-          />
+      <div className="list">
+        <div className="form">
           <label htmlFor="text">
             <FiSearch className="icon" />
           </label>
-        </form>
-      </div>
-      <div className="container">
-        {data?.results?.map((item, index) => {
-          return <Card data={item} key={index} type={type} />;
-        })}
+          <form className="right" onSubmit={handeSearch}>
+            <input
+              type="text"
+              name="text"
+              id="text"
+              className="input"
+              onChange={(e) => setText(e.target.value)}
+            />
+          </form>
+        </div>
+        <div className="container">
+          {data?.results?.map((item, index) => {
+            return <Card data={item} key={index} type={type} />;
+          })}
+        </div>
       </div>
       <Pagination handePage={setPage} page={page} maxPage={maxPage} />
     </Wrapper>
   );
 }
 const Wrapper = styled.div`
-  .container {
+  .list {
     padding: 1rem 15rem;
+  }
+  .container {
+    --auto-grid-min-size: 13rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 2.5rem;
-    grid-row-gap: 2rem;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(var(--auto-grid-min-size), 1fr)
+    );
+    grid-gap: 1rem;
   }
-  .title {
-    padding: 0rem 15rem;
-    padding-top: 1rem;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-  .left,
-  .right {
+  .form {
     display: flex;
     align-items: center;
+    margin-bottom: 2rem;
   }
-  .pillar {
-    width: 0.25rem;
-    height: 2.5rem;
-    background-color: #e53637;
-    margin-right: 1rem;
-  }
-  .desc {
-    font-size: 1.75rem;
-    color: white;
-    font-weight: 600;
-  }
+
   .input {
-    width: 20rem;
+    width: 18.5rem;
     padding: 0.5rem;
     font-size: 1.25rem;
     border: none;
@@ -107,39 +92,17 @@ const Wrapper = styled.div`
   .icon {
     color: white;
     font-size: 1.75rem;
-    margin-left: 1rem;
+    margin-right: 1rem;
   }
-  @media (max-width: 768px) {
-    .container {
-      padding: 1rem;
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .title {
-      padding: 1rem;
-      flex-direction: column;
-    }
-    .pillar {
-      width: 0.125rem;
-      height: 2rem;
-    }
-    .desc {
-      font-size: 1.25rem;
-    }
-    .all,
-    .icon {
-      font-size: 1.25rem;
-    }
-    form {
-      margin-top: 1rem;
+
+  @media (max-width: 1170px) {
+    .list {
+      padding: 1rem 5rem;
     }
   }
-  @media (max-width: 1170px) and (min-width: 768px) {
-    .title {
+  @media (max-width: 994px) {
+    .list {
       padding: 1rem;
-    }
-    .container {
-      padding: 1rem;
-      grid-template-columns: repeat(3, 1fr);
     }
   }
 `;
