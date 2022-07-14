@@ -29,11 +29,11 @@ function Credits({ type }) {
       <div className="cast_list">
         <Splide
           options={{
-            perPage: 7,
+            autoWidth: true,
             arrows: false,
             pagination: false,
             drag: "free",
-            gap: "0.5rem",
+            gap: "0.75rem",
           }}
         >
           {data?.map((item, index) => {
@@ -96,6 +96,10 @@ const Wrapper = styled.div`
     margin-top: 0.25rem;
     font-size: 0.75rem;
     opacity: 0.8;
+    width: 8rem;
+  }
+  @media (max-width: 992px) {
+    padding: 1rem;
   }
 `;
 

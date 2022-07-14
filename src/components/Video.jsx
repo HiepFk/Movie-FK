@@ -58,6 +58,9 @@ const Wrapper = styled.div`
     color: white;
     font-weight: 600;
   }
+  @media (max-width: 992px) {
+    padding: 1rem;
+  }
 `;
 
 export default Video;

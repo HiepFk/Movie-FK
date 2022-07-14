@@ -113,7 +113,7 @@ const Wrapper = styled.div`
     top: 23rem;
     width: 35rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .vote {
       top: 5rem;
     }

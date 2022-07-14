@@ -49,7 +49,7 @@ const Wrapper = styled.div`
       grid-area: bon;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .wrapper {
       height: 90rem;
       grid-template-areas:

@@ -114,8 +114,29 @@ const Wrapper = styled.div`
       padding: 1rem;
       grid-template-columns: repeat(2, 1fr);
     }
+    .title {
+      padding: 1rem;
+      flex-direction: column;
+    }
+    .pillar {
+      width: 0.125rem;
+      height: 2rem;
+    }
+    .desc {
+      font-size: 1.25rem;
+    }
+    .all,
+    .icon {
+      font-size: 1.25rem;
+    }
+    form {
+      margin-top: 1rem;
+    }
   }
   @media (max-width: 1170px) and (min-width: 768px) {
+    .title {
+      padding: 1rem;
+    }
     .container {
       padding: 1rem;
       grid-template-columns: repeat(3, 1fr);

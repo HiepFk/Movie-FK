@@ -36,13 +36,13 @@ function Card({ data, type }) {
 }
 const Wrapper = styled.div`
   margin-bottom: 2rem;
-  width: 100%;
+  cursor: pointer;
   .link {
     color: white !important;
   }
   .wrapper {
     position: relative;
-    width: 100%;
+    width: 15rem;
     height: 20rem;
     overflow: hidden;
   }
@@ -80,7 +80,7 @@ const Wrapper = styled.div`
   }
   .icon {
     transform: translateX(-0.25rem);
-    color: yellow !important;
+    color: yellow;
     font-weight: bold;
     margin-right: 0.25rem;
   }
@@ -88,6 +88,12 @@ const Wrapper = styled.div`
     margin-top: 0.75rem;
     font-size: 1.25rem;
     font-weight: bold;
+    width: 16rem;
+  }
+  @media (max-width: 768px) {
+    .name {
+      text-align: center;
+    }
   }
 `;
 export default Card;

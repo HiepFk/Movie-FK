@@ -25,37 +25,14 @@ function ListCard({ type, getData, title, link }) {
           <BsArrowRight className="icon" />
         </Link>
       </div>
-      <div className="container small">
+      <div className="container ">
         <Splide
           options={{
-            perPage: 2,
-            width: "100%",
-            rewind: true,
+            autoWidth: true,
             arrows: false,
             pagination: false,
             drag: "free",
-            gap: "1.5rem",
-          }}
-        >
-          {data?.map((item, index) => {
-            return (
-              <SplideSlide key={index}>
-                <Card data={item} type={type} />
-              </SplideSlide>
-            );
-          })}
-        </Splide>
-      </div>
-      <div className="container laptop">
-        <Splide
-          options={{
-            perPage: 4,
-            width: "100%",
-            rewind: true,
-            arrows: false,
-            pagination: false,
-            drag: "free",
-            gap: "1.5rem",
+            gap: "1rem",
           }}
         >
           {data?.map((item, index) => {
@@ -114,25 +91,23 @@ const Wrapper = styled.div`
     margin-left: 1rem;
     transition: all 0.25s linear;
   }
-  .container {
-    cursor: pointer;
-    width: calc(100% - 0.5rem);
-    /* height: 25rem; */
-  }
+
   @media (max-width: 768px) {
     padding: 1rem;
-    .small {
-      display: block;
+    .pillar {
+      width: 0.125rem;
+      height: 2rem;
     }
-    .laptop {
-      display: none;
+    .desc {
+      font-size: 1.25rem;
+    }
+    .all,
+    .icon {
+      font-size: 1rem;
     }
   }
   @media (max-width: 1170px) and (min-width: 768px) {
-    padding: 1rem;
-    .small {
-      display: none;
-    }
+    padding: 1rem 5rem;
   }
 `;
 export default ListCard;

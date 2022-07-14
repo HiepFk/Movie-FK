@@ -94,18 +94,47 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+    .icon {
+      color: yellow;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-right: 0.5rem;
+    }
     span {
       opacity: 0.8;
     }
   }
-  .icon {
-    color: yellow;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-right: 0.5rem;
-  }
+
   .season_about {
     opacity: 0.8;
+  }
+
+  @media (max-width: 992px) {
+    padding: 1rem;
+    .img {
+      margin-right: 2rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .season_item {
+      flex-direction: column;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .img {
+      width: 18rem;
+      margin-bottom: 1rem;
+      margin-right: 0rem !important;
+    }
+    .date {
+      display: inline-block;
+      width: 20rem;
+      margin: 0 auto;
+    }
+    .season_about {
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
   }
 `;
 export default Season;
