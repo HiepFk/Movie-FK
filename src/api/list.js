@@ -44,10 +44,11 @@ export const searchList = async (
   setLoading,
   setMaxPage
 ) => {
-  const link = `${localLink}/search/${type}/?api_key=${api}&language=en-US&page=${page}&query=${text}&include_adult=false`;
+  const link = `${localLink}/search/${type}?api_key=${api}&language=en-US&page=${page}&query=${text}&include_adult=false`;
   try {
     const res = await axios.get(link);
     setLoading(false);
+    console.log(res.data);
     setData(res?.data);
     setMaxPage(1);
   } catch (error) {
