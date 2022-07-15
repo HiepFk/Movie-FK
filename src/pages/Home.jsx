@@ -17,19 +17,19 @@ function Home() {
       <ListCard
         type="tv"
         getData={getTrending}
-        title={"POPULAR TV SERIES"}
+        title={"POPULAR TV"}
         link="/tvs"
       />
       <ListCard
         type="movie"
         getData={getTopRated}
-        title={"TOP RATED MOVIES"}
+        title={"TOP MOVIES"}
         link="/topmovies"
       />
       <ListCard
         type="tv"
         getData={getTopRated}
-        title={"TOP RATED TV SERIES"}
+        title={"TOP TV "}
         link="/toptvs"
       />
     </>

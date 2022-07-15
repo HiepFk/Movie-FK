@@ -53,7 +53,7 @@ const Wrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: all 0.25s linear;
     cursor: pointer;
     :hover {
@@ -90,7 +90,20 @@ const Wrapper = styled.div`
     font-size: 1rem;
     font-weight: bold;
     width: 15rem;
-    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .wrapper {
+      width: 10rem;
+      height: 15rem;
+    }
+    .time {
+      display: none;
+    }
+    .name {
+      width: 10rem;
+      text-align: center;
+    }
   }
 `;
 export default Card;

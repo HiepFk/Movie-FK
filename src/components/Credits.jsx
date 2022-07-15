@@ -92,6 +92,9 @@ const Wrapper = styled.div`
     border-radius: 5px;
     margin-bottom: 0.5rem;
   }
+  .name {
+    width: 8rem;
+  }
   .character {
     margin-top: 0.25rem;
     font-size: 0.75rem;

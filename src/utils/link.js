@@ -11,7 +11,7 @@ export const menu = [
   },
   {
     id: 3,
-    title: "TV Series",
+    title: "TV",
     url: "/tvs",
   },
   {
@@ -21,7 +21,7 @@ export const menu = [
   },
   {
     id: 5,
-    title: "Top TV Seri",
+    title: "Top TV",
     url: "/toptvs",
   },
 ];

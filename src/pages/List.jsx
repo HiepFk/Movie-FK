@@ -63,7 +63,7 @@ const Wrapper = styled.div`
     padding: 1rem 15rem;
   }
   .container {
-    --auto-grid-min-size: 13rem;
+    --auto-grid-min-size: 15rem;
     display: grid;
     grid-template-columns: repeat(
       auto-fill,
@@ -95,14 +95,19 @@ const Wrapper = styled.div`
     margin-right: 1rem;
   }
 
-  @media (max-width: 1170px) {
+  @media (max-width: 992px) {
     .list {
       padding: 1rem 5rem;
     }
   }
-  @media (max-width: 994px) {
+  @media (max-width: 768px) {
     .list {
       padding: 1rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .container {
+      --auto-grid-min-size: 10rem;
     }
   }
 `;
