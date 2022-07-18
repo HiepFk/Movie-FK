@@ -48,9 +48,8 @@ export const searchList = async (
   try {
     const res = await axios.get(link);
     setLoading(false);
-    console.log(res.data);
     setData(res?.data);
-    setMaxPage(1);
+    setMaxPage(res.data?.total_pages);
   } catch (error) {
     throw error;
   }

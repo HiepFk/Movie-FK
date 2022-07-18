@@ -19,7 +19,6 @@ function Season({ type }) {
   if (loading) {
     return <Loading />;
   }
-  console.log(data);
   return (
     <Wrapper>
       <div className="title">

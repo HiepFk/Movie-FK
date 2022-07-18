@@ -24,8 +24,16 @@ function List({ type, choise, title }) {
 
   useEffect(() => {
     setLoading(true);
-    pageList(setData, type, choise, page, setLoading, setMaxPage);
-  }, [choise, page, type]);
+    if (!text) {
+      pageList(setData, type, choise, page, setLoading, setMaxPage);
+    }
+  }, [choise, page, text, type]);
+
+  useEffect(() => {
+    if (text) {
+      searchList(setData, type, text, page, setLoading, setMaxPage);
+    }
+  }, [page, text, type]);
 
   if (loading) {
     return <Loading />;

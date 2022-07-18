@@ -15,7 +15,7 @@ function Pagination({ handePage, page, maxPage }) {
         previousLabel={"<"}
         nextLabel={">"}
         pageCount={maxPage}
-        pageRangeDisplayed={2}
+        pageRangeDisplayed={1}
         marginPagesDisplayed={1}
         onPageChange={handeCheck}
         forcePage={page - 1}
