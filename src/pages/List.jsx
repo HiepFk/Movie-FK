@@ -13,27 +13,29 @@ function List({ type, choise, title }) {
   const [loading, setLoading] = useState(false);
   const [maxPage, setMaxPage] = useState();
   const [text, setText] = useState("");
+  const [name, setName] = useState("");
 
   const handeSearch = (e) => {
     e.preventDefault();
     setLoading(true);
     setPage(1);
+    setName(text);
     searchList(setData, type, text, page, setLoading, setMaxPage);
-    // setText("");
+    setText("");
   };
 
   useEffect(() => {
     setLoading(true);
-    if (!text) {
+    if (!name) {
       pageList(setData, type, choise, page, setLoading, setMaxPage);
     }
-  }, [choise, page, text, type]);
+  }, [choise, page, name, type]);
 
   useEffect(() => {
-    if (text) {
-      searchList(setData, type, text, page, setLoading, setMaxPage);
+    if (name) {
+      searchList(setData, type, name, page, setLoading, setMaxPage);
     }
-  }, [page, text, type]);
+  }, [page, name, type]);
 
   if (loading) {
     return <Loading />;
